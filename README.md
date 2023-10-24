@@ -1,6 +1,8 @@
 # Useful instructions
 ## Tutorial
 https://create-react-app.dev/docs/adding-typescript
+<br>
+npm install --save babel-plugin-relay
 
 
 

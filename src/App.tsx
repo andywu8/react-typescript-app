@@ -1,6 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+const world = 'world';
+
+function hello(who: string = world): string {
+  return `Hello ${who}! `;
+}
 
 function App() {
   return (
@@ -18,6 +23,7 @@ function App() {
         >
           Learn React
         </a>
+        {hello()}
       </header>
     </div>
   );
