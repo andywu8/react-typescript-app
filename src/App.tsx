@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+import { Form } from './components/Form';
+import { NumberGenerator } from './components/NumberGenerator';
+
 const world = 'world';
 
 function hello(who: string = world): string {
@@ -19,6 +22,8 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         {hello()}
+        <Form />
+        <NumberGenerator />
       </header>
     </div>
   );

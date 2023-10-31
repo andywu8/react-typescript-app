@@ -3,46 +3,46 @@
 
 import * as React from 'react';
 
-function displayNums(num: number): string {
-    let result = '';
-    for (let i = 0; i < num; i++) {
-      result += i.toString();
+
+
+export const NumberGenerator = () => {
+
+    function displayNums(num: number): string {
+        var result:string = '';
+        for (let i = 0; i < num; i++) {
+          result += i.toString();
+        }
+        return result;
     }
-    return result;
-}
   
 
-// Pascal Case
-class NumberGenerator extends React.Component {
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            value: ''
-        };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-    handleChange(event: React.ChangeEvent) {
-        this.setState({value: event.target.value});
-    }
-    handleSubmit(event:React.FormEvent) {
-        alert('A name was submitted: ' + this.state.value);
+    const onSubmit = (event: any) => {
         event.preventDefault();
-      }
-    render() {
-        return (
-            <>
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                Name:
-                <input type="text" value={this.state.value} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
-            </>
-        )
-    }
-}
+        // Validate form data
+        // ...
 
-export default NumberGenerator;
+        const target = event.target;
+
+        const data = {
+            num: target.num.value,
+        };
+        for (let i = 0; i < data.num; i++) {
+            return (i);
+            // console.log(i);
+        }
+
+
+        console.log(data);
+    };
+
+    return (
+        <form className="form" onSubmit={onSubmit}>
+            <div className="field">
+                <label htmlFor="num">Number</label>
+                <input id="num" />
+            </div>
+
+            <button type="submit">Number Generate</button>
+        </form>
+    );
+};
